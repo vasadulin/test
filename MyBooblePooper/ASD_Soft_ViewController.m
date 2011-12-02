@@ -10,6 +10,11 @@
 
 @implementation ASD_Soft_ViewController
 
+@synthesize myTimer;
+@synthesize btnStart;
+@synthesize _manager;
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -22,7 +27,39 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //инициализация менеджера игры
+    _manager  =[[CGameManager alloc] initWithViewController: self];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"black_background.png"]];
+    
 }
+
+- (IBAction)startTimer {
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:0.02f 
+                                                    target:_manager 
+                                                  selector:@selector(tick) 
+                                                  userInfo:nil 
+                                                   repeats:YES];
+}
+
+- (IBAction)stopTimer {
+    if ([myTimer isValid]) {
+        [myTimer invalidate];
+    }
+}
+
+//- (void)tick 
+//{
+//    NSLog(@"Time tick");
+//    
+//    CGRect r = btnStart.frame;
+//    r.origin.x +=0.01;
+//    btnStart.frame = r;
+//    
+//    CGPoint c = btnStart.center;
+//    c.y +=0.03;
+//    btnStart.center = c;
+//    
+//   }
 
 - (void)viewDidUnload
 {

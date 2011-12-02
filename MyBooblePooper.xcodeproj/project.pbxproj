@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AD15CF11487752F00442F29 /* board_and_swords.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CEF1487752E00442F29 /* board_and_swords.png */; };
+		2AD15CF21487752F00442F29 /* board_and_swords@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CF01487752E00442F29 /* board_and_swords@2x.png */; };
+		2AD15CF51487A7E800442F29 /* black_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CF31487A7E500442F29 /* black_background.png */; };
+		2AD15CF61487A7E800442F29 /* black_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CF41487A7E700442F29 /* black_background@2x.png */; };
 		2AF23662147E7E87007A6336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF23661147E7E87007A6336 /* UIKit.framework */; };
 		2AF23664147E7E87007A6336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF23663147E7E87007A6336 /* Foundation.framework */; };
 		2AF23666147E7E87007A6336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF23665147E7E87007A6336 /* CoreGraphics.framework */; };
@@ -15,22 +19,35 @@
 		2AF23672147E7E87007A6336 /* ASD_Soft_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF23671147E7E87007A6336 /* ASD_Soft_AppDelegate.m */; };
 		2AF23675147E7E87007A6336 /* ASD_Soft_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF23674147E7E87007A6336 /* ASD_Soft_ViewController.m */; };
 		2AF23678147E7E87007A6336 /* ASD_Soft_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF23676147E7E87007A6336 /* ASD_Soft_ViewController.xib */; };
+		2AF23694147E9CA3007A6336 /* CBall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF23693147E9CA3007A6336 /* CBall.m */; };
+		2AF2369B147F947F007A6336 /* CGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2369A147F947F007A6336 /* CGameManager.m */; };
+		2AF2369E147FA7F4007A6336 /* CGUIBall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2369D147FA7F4007A6336 /* CGUIBall.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AD15CEF1487752E00442F29 /* board_and_swords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board_and_swords.png; sourceTree = "<group>"; };
+		2AD15CF01487752E00442F29 /* board_and_swords@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "board_and_swords@2x.png"; sourceTree = "<group>"; };
+		2AD15CF31487A7E500442F29 /* black_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_background.png; sourceTree = "<group>"; };
+		2AD15CF41487A7E700442F29 /* black_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_background@2x.png"; sourceTree = "<group>"; };
 		2AF2365D147E7E87007A6336 /* MyBooblePooper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBooblePooper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF23661147E7E87007A6336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2AF23663147E7E87007A6336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2AF23665147E7E87007A6336 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2AF23669147E7E87007A6336 /* MyBooblePooper-Info.plist */ = {isa = PBXFileReference; path = "MyBooblePooper-Info.plist"; sourceTree = "<group>"; };
+		2AF23669147E7E87007A6336 /* MyBooblePooper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyBooblePooper-Info.plist"; sourceTree = "<group>"; };
 		2AF2366B147E7E87007A6336 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AF2366D147E7E87007A6336 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2AF2366F147E7E87007A6336 /* MyBooblePooper-Prefix.pch */ = {isa = PBXFileReference; path = "MyBooblePooper-Prefix.pch"; sourceTree = "<group>"; };
-		2AF23670147E7E87007A6336 /* ASD_Soft_AppDelegate.h */ = {isa = PBXFileReference; path = ASD_Soft_AppDelegate.h; sourceTree = "<group>"; };
+		2AF2366F147E7E87007A6336 /* MyBooblePooper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyBooblePooper-Prefix.pch"; sourceTree = "<group>"; };
+		2AF23670147E7E87007A6336 /* ASD_Soft_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASD_Soft_AppDelegate.h; sourceTree = "<group>"; };
 		2AF23671147E7E87007A6336 /* ASD_Soft_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASD_Soft_AppDelegate.m; sourceTree = "<group>"; };
-		2AF23673147E7E87007A6336 /* ASD_Soft_ViewController.h */ = {isa = PBXFileReference; path = ASD_Soft_ViewController.h; sourceTree = "<group>"; };
+		2AF23673147E7E87007A6336 /* ASD_Soft_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASD_Soft_ViewController.h; sourceTree = "<group>"; };
 		2AF23674147E7E87007A6336 /* ASD_Soft_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASD_Soft_ViewController.m; sourceTree = "<group>"; };
 		2AF23677147E7E87007A6336 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ASD_Soft_ViewController.xib; sourceTree = "<group>"; };
+		2AF23692147E9CA2007A6336 /* CBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBall.h; sourceTree = "<group>"; };
+		2AF23693147E9CA3007A6336 /* CBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBall.m; sourceTree = "<group>"; };
+		2AF23699147F947F007A6336 /* CGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGameManager.h; sourceTree = "<group>"; };
+		2AF2369A147F947F007A6336 /* CGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGameManager.m; sourceTree = "<group>"; };
+		2AF2369C147FA7F4007A6336 /* CGUIBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGUIBall.h; sourceTree = "<group>"; };
+		2AF2369D147FA7F4007A6336 /* CGUIBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGUIBall.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AD15CF71487B3F300442F29 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2AD15CEF1487752E00442F29 /* board_and_swords.png */,
+				2AD15CF01487752E00442F29 /* board_and_swords@2x.png */,
+				2AD15CF31487A7E500442F29 /* black_background.png */,
+				2AD15CF41487A7E700442F29 /* black_background@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		2AF23652147E7E87007A6336 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +111,13 @@
 				2AF23674147E7E87007A6336 /* ASD_Soft_ViewController.m */,
 				2AF23676147E7E87007A6336 /* ASD_Soft_ViewController.xib */,
 				2AF23668147E7E87007A6336 /* Supporting Files */,
+				2AF23692147E9CA2007A6336 /* CBall.h */,
+				2AF23693147E9CA3007A6336 /* CBall.m */,
+				2AF2369C147FA7F4007A6336 /* CGUIBall.h */,
+				2AF2369D147FA7F4007A6336 /* CGUIBall.m */,
+				2AF23699147F947F007A6336 /* CGameManager.h */,
+				2AF2369A147F947F007A6336 /* CGameManager.m */,
+				2AD15CF71487B3F300442F29 /* Images */,
 			);
 			path = MyBooblePooper;
 			sourceTree = "<group>";
@@ -150,6 +185,10 @@
 			files = (
 				2AF2366C147E7E87007A6336 /* InfoPlist.strings in Resources */,
 				2AF23678147E7E87007A6336 /* ASD_Soft_ViewController.xib in Resources */,
+				2AD15CF11487752F00442F29 /* board_and_swords.png in Resources */,
+				2AD15CF21487752F00442F29 /* board_and_swords@2x.png in Resources */,
+				2AD15CF51487A7E800442F29 /* black_background.png in Resources */,
+				2AD15CF61487A7E800442F29 /* black_background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +202,9 @@
 				2AF2366E147E7E87007A6336 /* main.m in Sources */,
 				2AF23672147E7E87007A6336 /* ASD_Soft_AppDelegate.m in Sources */,
 				2AF23675147E7E87007A6336 /* ASD_Soft_ViewController.m in Sources */,
+				2AF23694147E9CA3007A6336 /* CBall.m in Sources */,
+				2AF2369B147F947F007A6336 /* CGameManager.m in Sources */,
+				2AF2369E147FA7F4007A6336 /* CGUIBall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +316,7 @@
 				2AF2367D147E7E87007A6336 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
