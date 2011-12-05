@@ -16,20 +16,13 @@
 //Методы
 -(void) tick
 {
-    [super tick];
 #if TEST_MODE
     //NSLog(@"CGUIBall: Time tick");
 #endif
-    _button.center = super._center;
     
-//    CGRect r = btnStart.frame;
-//    r.origin.x +=0.01;
-//    btnStart.frame = r;
-//    
-//    CGPoint c = btnStart.center;
-//    c.y +=0.03;
-//    btnStart.center = c;
-//    
+    [super tick];
+    _button.center = super._center;
+  
 }
 
 //-(id) initWithViewController: (UIViewController*)vc  

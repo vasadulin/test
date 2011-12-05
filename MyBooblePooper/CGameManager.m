@@ -15,6 +15,11 @@
 #define MAX_COUNT_BALL 10
 #define MIN_COUNT_BALL 2
 
+//расстояние которое пролетит UILabel, отображающая очки за убитый шар
+#define DISTANCE_POINTS 30
+//Время анимации (полета)UILabel, отображающая очки за убитый шар
+#define TIME_ANIMATE_POINTS 1.0f
+
 @implementation CGameManager
 
 @synthesize _balls;
@@ -119,9 +124,15 @@
                 //CGRect кнопки
                 CGRect rect = [ball._button frame];
                 
-                //очки за шара
+                //очки за шар
                 NSInteger points = [ball points];
-                              
+                 
+                //TODO Добавить красивую анимацию исчезновения кнопки
+                //удалаяем кнопку из _balls и из ViewController
+                [_balls removeObjectAtIndex:i];
+                [ball._button removeFromSuperview];
+                ball = nil;
+                
                 //делаем всплывающие очки
                 UILabel * labelPoints = [[UILabel alloc] initWithFrame:rect];
                 [labelPoints setText:[[NSString alloc] initWithFormat:@"%d", points]];
@@ -132,12 +143,29 @@
                 //add the button to the view
                 [_mainViewController.view  addSubview:labelPoints];
                 
+                
+                //--------------- Всплывание очков  (анимация) ------------------
+                //изменяем координаты надписи очков
+                rect.origin.y -= DISTANCE_POINTS;
+                
+                [UIView animateWithDuration:TIME_ANIMATE_POINTS
+                    animations:^
+                    {
+                        // set new position of label which it will animate to
+                        labelPoints.frame = rect;
+                    }
+                    completion:^(BOOL finished)
+                    {
+                        [labelPoints removeFromSuperview];
+                    }
+                 
+                ];
+                labelPoints = nil;
+                
                 //--------------------------------------------
-                //удалаяем кнопку из _balls и из ViewController
-                [_balls removeObjectAtIndex:i];
-                [ball._button removeFromSuperview];
-                ball = nil;
-                //TODO Добавить анимацию красивую
+                
+                
+                
                 return;
             }
         }
