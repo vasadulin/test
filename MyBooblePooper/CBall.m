@@ -14,11 +14,12 @@
 
 
 
-#define MIN_X 0
-#define MAX_X 320
-#define MIN_Y 0
-#define MAX_Y 480
+//#define MIN_X 0
+//#define MAX_X 320
+//#define MIN_Y 0
+//#define MAX_Y 440
 
+#define MIN_R 15
 #define MAX_R 50
 
 @implementation CBall
@@ -27,6 +28,7 @@
 @synthesize _r;
 @synthesize _speed;
 @synthesize _mass;
+@synthesize _availableArea;
 
 
 
@@ -41,47 +43,42 @@
     _center.x += _speed.x;
     _center.y += _speed.y;
     
-//    if (_center.x  > MAX_X || _center.x  < MIN_X) 
-//    {//меняем направление движения по х
-//        _speed.x = - _speed.x;
-//    }
-//    
-//    if (_center.y  > MAX_Y || _center.y  < MIN_Y) 
-//    {//меняем направление движения по y
-//        _speed.y = - _speed.y;
-//    }
 
-    
-    if (_center.x + _r > MAX_X || _center.x - _r < MIN_X) 
-    {//меняем направление движения по х
+    //меняем направление движения по х
+    if (_center.x + _r > _availableArea->size.width + _availableArea->origin.x)
+    {
+        _speed.x = - _speed.x;
+    }    
+    if ( _center.x - _r <  _availableArea->origin.x) 
+    {        
         _speed.x = - _speed.x;
     }
     
-    if (_center.y + _r > MAX_Y || _center.y - _r < MIN_Y) 
-    {//меняем направление движения по y
+    //меняем направление движения по y
+    if (_center.y + _r > _availableArea->size.height + _availableArea->origin.y
+        || _center.y - _r < _availableArea->origin.y) 
+    {
         _speed.y = - _speed.y;
     }
 }
 
 
 
--(id) init
+-(id) initWithAvailableArea:(CGRect*)rectArea 
 {
     //srandom(time(NULL));
-    
-
-    
     self = [super init];
     if (self != nil) 
     {
+        _availableArea = rectArea;
         //радиус шара
-        int lR = 15;
+        int lR = MIN_R;
         int rR = MAX_R;
         _r = random() % (rR-lR+1) + lR  ;
         
         //центр шара
-        int lcx = MIN_X + _r, rcx = MAX_X - _r; //диапазон по Х
-        int lcy = MIN_Y + _r, rcy = MAX_Y - _r; //диапазон по У
+        int lcx = _availableArea->origin.x + _r, rcx = _availableArea->size.width + _availableArea->origin.x - _r; //диапазон по Х
+        int lcy = _availableArea->origin.y + _r, rcy = _availableArea->size.height + _availableArea->origin.y - _r; //диапазон по У
         
         _center = CGPointMake(
                               random() % (rcx-lcx+1) + lcx, // center X
@@ -111,7 +108,8 @@
 }
 
 -(id) initWithCenter:(CGPoint)point 
-             radius:(CGFloat)radius;
+              radius:(CGFloat)radius
+       availableArea:(CGRect*)rectArea;
 {
     self = [super init];
     
@@ -121,6 +119,7 @@
         _r = radius;
         _speed = CGPointMake(1.0f, 1.0f);
         _mass = 1.0f;
+        _availableArea=rectArea;
         
     }
     return self;
@@ -128,9 +127,36 @@
 
 -(NSInteger) points
 {
-    return (1 + MAX_R - _r)*10; 
+    return (1 + MAX_R - _r); 
     
 }
+
+//сообщает шару о том, что нужно переместиться 
+//на допустимую область _availableArea
+-(void) moveToAvailableArea
+{
+    //CGRect который занимает шар
+    CGRect ballRect = CGRectMake(_center.x - _r, _center.y + _r, 2*_r, 2*_r);
+    
+    //если шар находится за допустимой областью _availableArea
+    if ( ! CGRectContainsRect(*_availableArea, ballRect))
+    {
+        //то меняем у него координаты Х-У, 
+        CGFloat tmp = _center.x;
+        _center.x = _center.y;
+        _center.y = tmp;
+        //если все равно выходит за _availableArea, то обрезаем Х и У
+        if (_center.x + _r > _availableArea->size.width + _availableArea->origin.x) 
+        {
+            _center.x = _availableArea->size.width + _availableArea->origin.x - _r;
+        }
+        if (_center.y + _r > _availableArea->size.height + _availableArea->origin.y) 
+        {
+            _center.y = _availableArea->size.height + _availableArea->origin.y - _r;
+        }
+    }
+}
+
 
 //-(id) initWithParam: 
 //             center:(CGPoint)center 
@@ -149,5 +175,7 @@
 //    }
 //    return self;
 //}
+
+
 
 @end

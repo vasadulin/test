@@ -16,16 +16,18 @@
 @property (retain, nonatomic) UIViewController * _mainViewController;
 
 //Методы
--(id) initWithViewController: (UIViewController*)vc  
+//-(id) initWithViewController: (UIViewController*)vc  
                  //gameManager:(CGameManager*) gm
-;
+//;
 -(id) initWithViewController: (UIViewController*)vc  
                  gameManager:(CGameManager*) gm
+               availableArea:(CGRect*)rectArea
 ;
 -(id) initWithViewController: (UIViewController*)vc  
                  gameManager:(CGameManager*) gm
                       center:(CGPoint)point 
-                      radius:(CGFloat)radius;
+                      radius:(CGFloat)radius
+               availableArea:(CGRect*)rectArea;
 
 -(void) tick;
 

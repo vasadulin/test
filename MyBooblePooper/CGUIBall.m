@@ -62,12 +62,16 @@
 
 -(id) initWithViewController: (UIViewController*)vc  
                  gameManager:(CGameManager*) gm
+               availableArea:(CGRect*)rectArea
 {
-    self = [super init];
+    self = [super initWithAvailableArea:rectArea];
+    
     if (self != nil) 
     {
+        super._availableArea = rectArea;
+
         _mainViewController = vc;
-        //create the button
+                //create the button
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
         
         //set the position of the button
@@ -103,9 +107,10 @@
                  gameManager:(CGameManager*) gm
                       center:(CGPoint)point 
                       radius:(CGFloat)radius
+               availableArea:(CGRect*)rectArea
 
 {
-    self = [super initWithCenter: point radius:radius];
+    self = [super initWithCenter: point radius:radius availableArea:rectArea];
     if (self != nil) 
     {
         _mainViewController = vc;

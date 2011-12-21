@@ -10,21 +10,31 @@
 #define TEST_MODE 1
 
 @interface CBall : NSObject
+{
+    
 
+}
 
 @property (nonatomic) CGPoint _center;
 @property (nonatomic) CGFloat _r;
 @property (nonatomic) CGPoint _speed;
 @property (nonatomic) CGFloat _mass;
+@property (nonatomic) CGRect* _availableArea;
 
 //Методы
 -(void) tick;
--(id) init;
+-(id) initWithAvailableArea:(CGRect*)rectArea;
 
 -(id) initWithCenter:(CGPoint)point 
-              radius:(CGFloat)radius;
+              radius:(CGFloat)radius
+       availableArea:(CGRect*)rectArea;
 
 -(NSInteger) points;
+
+//сообщает шару о том, что нужно переместиться 
+//на допустимую область _availableArea
+-(void) moveToAvailableArea;
+
 
 //-(id) initWithParam: 
 //             center:(CGPoint)center 

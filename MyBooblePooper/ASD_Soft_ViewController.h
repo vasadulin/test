@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CGameManager.h"
 
-@interface ASD_Soft_ViewController : UIViewController
+//Class CGameManager;
 
-@property (nonatomic, retain) NSTimer *myTimer;
+@interface ASD_Soft_ViewController : UIViewController <UIActionSheetDelegate >	// for UIActionSheet
+
+@property (nonatomic, retain) NSTimer *tickTimer;
+@property (nonatomic, retain) NSTimer *gameOverTimer;
 
 @property (nonatomic, retain) IBOutlet UIButton * btnStart;  
+@property (nonatomic, retain) IBOutlet UIButton * btnStop; 
 
 @property (nonatomic, retain) CGameManager * _manager;
 
@@ -21,5 +25,9 @@
 //- (void) tick;
 - (IBAction)startTimer;
 - (IBAction)stopTimer;
+
+//передвигаем кнопки управления и очки в допустимый Rect
+-(void) moveControlsToCurrentRectArea;
+
 
 @end

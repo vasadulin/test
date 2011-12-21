@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A169A781490C980004054EB /* button_green_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A169A761490C980004054EB /* button_green_start.png */; };
+		2A169A791490C980004054EB /* button_red_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A169A771490C980004054EB /* button_red_stop.png */; };
 		2AD15CF11487752F00442F29 /* board_and_swords.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CEF1487752E00442F29 /* board_and_swords.png */; };
 		2AD15CF21487752F00442F29 /* board_and_swords@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CF01487752E00442F29 /* board_and_swords@2x.png */; };
 		2AD15CF51487A7E800442F29 /* black_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD15CF31487A7E500442F29 /* black_background.png */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A169A761490C980004054EB /* button_green_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_green_start.png; sourceTree = "<group>"; };
+		2A169A771490C980004054EB /* button_red_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_stop.png; sourceTree = "<group>"; };
 		2AD15CEF1487752E00442F29 /* board_and_swords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board_and_swords.png; sourceTree = "<group>"; };
 		2AD15CF01487752E00442F29 /* board_and_swords@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "board_and_swords@2x.png"; sourceTree = "<group>"; };
 		2AD15CF31487A7E500442F29 /* black_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_background.png; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		2AD15CF71487B3F300442F29 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2A169A761490C980004054EB /* button_green_start.png */,
+				2A169A771490C980004054EB /* button_red_stop.png */,
 				2AD15CEF1487752E00442F29 /* board_and_swords.png */,
 				2AD15CF01487752E00442F29 /* board_and_swords@2x.png */,
 				2AD15CF31487A7E500442F29 /* black_background.png */,
@@ -189,6 +195,8 @@
 				2AD15CF21487752F00442F29 /* board_and_swords@2x.png in Resources */,
 				2AD15CF51487A7E800442F29 /* black_background.png in Resources */,
 				2AD15CF61487A7E800442F29 /* black_background@2x.png in Resources */,
+				2A169A781490C980004054EB /* button_green_start.png in Resources */,
+				2A169A791490C980004054EB /* button_red_stop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
