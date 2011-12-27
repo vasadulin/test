@@ -16,7 +16,8 @@
 }
 
 @property (nonatomic) CGPoint _center;
-@property (nonatomic) CGFloat _r;
+@property (nonatomic) CGFloat _rX;
+@property (nonatomic) CGFloat _rY;
 @property (nonatomic) CGPoint _speed;
 @property (nonatomic) CGFloat _mass;
 @property (nonatomic) CGRect* _availableArea;

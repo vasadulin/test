@@ -17,10 +17,14 @@
 @property (retain, nonatomic) UILabel * _labelGameOver;
 @property (retain, nonatomic) UIButton * _btnPenalti;
 @property (retain, nonatomic) NSString* _currentNick;
+@property (retain, nonatomic) NSArray * _imagesForBall;
 
 @property (nonatomic) NSInteger _scores;
 @property (nonatomic) NSInteger _secondLeftToGameover;
 @property (nonatomic) CGRect _rectArea;
+
+    
+
 
 
 //Методы

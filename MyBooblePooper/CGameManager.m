@@ -74,6 +74,7 @@
 @synthesize _btnPenalti;
 @synthesize _secondLeftToGameover;
 @synthesize _currentNick;
+@synthesize _imagesForBall;
 
 //Методы
 //конструктор без параметров
@@ -93,6 +94,15 @@
         
         //инициализируем массив шаров  
         _balls = [NSMutableArray arrayWithCapacity:1];
+        
+        //загружаем картинки для шаров в массив картинок
+        _imagesForBall = [NSArray arrayWithObjects:
+                             [UIImage imageNamed:@"01.png"],
+                             [UIImage imageNamed:@"02.png"],
+                             [UIImage imageNamed:@"03.png"],
+                             nil
+                          ];
+
         
 //        //--------- создаем кнопку для штрафного нажатия -----------
 //        //create the button

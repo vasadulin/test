@@ -8,10 +8,23 @@
 
 #import "CGUIBall.h"
 
+
+//за сколько тиков менять одну картинку
+#define FREQUENCY_CHANGE_IMAGE 3
+#define COUNT_OF_IMAGES_FOR_BALL 3
+
+@interface CGUIBall ()
+{
+    int counterOfTick;
+    int numberOfImage;
+}
+@end
+
 @implementation CGUIBall
 
 @synthesize _button;
 @synthesize _mainViewController;
+@synthesize _gameManager;
 
 //Методы
 -(void) tick
@@ -22,6 +35,20 @@
     
     [super tick];
     _button.center = super._center;
+    counterOfTick++;
+    if (counterOfTick % FREQUENCY_CHANGE_IMAGE == 0) 
+    {
+        counterOfTick = 0;
+        //меняем картинку у кнопки
+        [_button setImage: [_gameManager._imagesForBall objectAtIndex:numberOfImage] forState:UIControlStateNormal];
+        
+        numberOfImage++;
+        if (numberOfImage >= COUNT_OF_IMAGES_FOR_BALL) 
+        {
+            numberOfImage=0;
+        }
+        
+    }
   
 }
 
@@ -68,6 +95,10 @@
     
     if (self != nil) 
     {
+        counterOfTick = 0;
+        numberOfImage = 0;
+        _gameManager = gm;
+        
         super._availableArea = rectArea;
 
         _mainViewController = vc;
@@ -76,7 +107,7 @@
         
         //set the position of the button
         _button.frame = CGRectMake(super._center.x, super._center.y, 
-                                   super._r*2 , super._r*2 );
+                                   super._rX*2 , super._rY*2 );
         
         //set the button's title
         //[_button setTitle:@"Kill" forState:UIControlStateNormal];
@@ -87,7 +118,11 @@
         buttonTag++;
         
         //добавляем кнопке картинку
-        [_button setImage:[UIImage imageNamed:@"board_and_swords@2x.png"] forState:UIControlStateNormal];
+        if (_gameManager._imagesForBall) 
+        {
+            [_button setImage: [_gameManager._imagesForBall objectAtIndex:0] forState:UIControlStateNormal];
+        }
+        
         
         //добавляем кнопке обработчик
         [_button addTarget:gm 
@@ -113,13 +148,17 @@
     self = [super initWithCenter: point radius:radius availableArea:rectArea];
     if (self != nil) 
     {
+        counterOfTick = 0;
+        numberOfImage = 0;
+        _gameManager = gm;
+        
         _mainViewController = vc;
         //create the button
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
         
         //set the position of the button
         _button.frame = CGRectMake(super._center.x, super._center.y, 
-                                   super._r*2 , super._r*2 );
+                                   super._rX*2 , super._rY*2 );
         
         //set the button's title
         //[_button setTitle:@"Kill" forState:UIControlStateNormal];
@@ -129,8 +168,12 @@
         [_button setTag:buttonTag];
         buttonTag++;
         
+
         //добавляем кнопке картинку
-        [_button setImage:[UIImage imageNamed:@"board_and_swords@2x.png"] forState:UIControlStateNormal];
+        if (_gameManager._imagesForBall) 
+        {
+            [_button setImage: [_gameManager._imagesForBall objectAtIndex:0] forState:UIControlStateNormal];
+        }
         
         //добавляем кнопке обработчик
         [_button addTarget:gm 

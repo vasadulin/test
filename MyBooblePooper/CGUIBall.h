@@ -12,8 +12,11 @@
 
 @interface CGUIBall : CBall
 
+
+
 @property (retain, nonatomic) UIButton * _button;
 @property (retain, nonatomic) UIViewController * _mainViewController;
+@property (retain, nonatomic) CGameManager * _gameManager;
 
 //Методы
 //-(id) initWithViewController: (UIViewController*)vc  
