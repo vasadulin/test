@@ -11,7 +11,7 @@
 #import <stdlib.h>
 #import <time.h>
 
-
+//vitya privet
 
 
 //#define MIN_X 0
